@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Test (Sample)</title>
+    <link rel="stylesheet" href="C:\Users\sudha\OneDrive\Desktop\front end file\project1.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webcamjs/1.0.25/webcam.js">
+    </script>
+
+    
+    
+</head>
+
+<body>
+    <!--Header.-->
+    <div style="width:100%;overflow:hidden;margin:0;padding:20px 0;">
+        <h1>Employee Test</h1>
+    </div>
+    
+    <!--Student details.-->
+    <div id="student_details">
+        <h2>Personal Details</h2>
+        <ul>
+            <li><label>Name:</label> 
+                <input type="text" id="txtStudentName" placeholder="enter your name" />
+            </li>
+            <li><label>Address:</label> 
+                <input type="text" id="txtClass" placeholder="enter your class" />
+            </li>
+            <li><label>Phone Number:</label>
+                <input type='tel' id='phone' placeholder='enter your phone number'/>
+            </li>
+            <li><label>Picture:</label>
+                <p id="snapShot" style="width:125px;height:107px;border:solid 1px #888;margin-left:2%;"></p>
+                
+                <input type="button" id="btTakeSnap" 
+                    onclick="onlineTestApp.takeSnapshot(this)" 
+                        value="Take a Snapshot" />
+            </li>
+        </ul>
+    </div>
+
+    <!--Data entry section.-->
+    <div id="container_data_entry">
+        <!--Suject header.-->
+        <h2 id="subject"><b>Subject - Computer Science</b></h2> <br />
+
+        <!--Questions and input fields for answers.-->
+        <div id="container" style="width:100%;overflow:auto;">
+            <ul>
+                <li>
+                    <b>Q No. 1:</b> 
+                        What are Binary Operators? Give examples of arithmatic binary operators.
+                </li>
+                <li><textarea id="a1"></textarea></li>
+            </ul>
+            <ul>
+                <li>
+                    <b>Q No. 2:</b> 
+                        What is type conversion? What is meant by implicit and explicit type conversion?
+                </li>
+                <li><textarea id="a2"></textarea></li>
+            </ul>
+            <ul>
+                <li><b>
+                    Q No. 3:</b> 
+                        What do you mean by dynamic initialization of a variable? Give an example.
+                </li>
+                <li><textarea id="a3"></textarea></li>
+            </ul>
+            <ul>
+                <li><b>
+                    Q No. 4: </b>
+                        Explain Breifly about your last project.
+                
+
+                </li>
+            </ul>
+        </div>
+        
+        <!--The floating picture box to capture webcam image.-->
+        <div id="picturebox" style="width:100%;height:100%;">
+            <div class="revdivshowimg">
+
+                <div id="camera" style="height:auto;text-align:center;margin:0 auto;"></div>
+
+                <p>
+                    <!--Add picture.-->
+                    <input type="button" value="Ok" id="btAddPicture" 
+                        onclick="onlineTestApp.addCamPicture()" /> 
+
+                    <!--Cancel it.-->
+                    <input type="button" value="Cancel" 
+                        onclick="document.getElementById('picturebox').style.display = 'none';" />
+                </p>
+                <input type="hidden" id="dataurl" />
+            </div>
+        </div>
+        <div style="text-align:center;">
+            <!--Convert the data to PDF.-->
+            <input type="button" style="" value="Print to PDF" id="btPrint" 
+                onclick="onlineTestApp.printPage();" />
+        </div>
+    </div>
+    <script src="C:\Users\sudha\OneDrive\Desktop\front end file\Employeedetails.js"></script>
+
+</body>
+</HTML>
